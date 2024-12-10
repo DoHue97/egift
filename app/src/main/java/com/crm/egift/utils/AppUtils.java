@@ -4,7 +4,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.util.Log;
+
 import com.crm.egift.R;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AppUtils {
     public static final String TAG = "EGIFT_APPUTILS";
@@ -40,5 +53,63 @@ public class AppUtils {
             }
         });
 
+    }
+
+    static public String customFormat(double value ) {
+        Locale locale = new Locale("el", "GR");
+        String pattern = "###,###.##";
+        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat
+                .getNumberInstance(locale);
+
+        decimalFormat.applyPattern(pattern);
+        decimalFormat.setMaximumFractionDigits(2);
+        decimalFormat.setMinimumFractionDigits(2);
+        return decimalFormat.format(value);
+    }
+
+    static public ArrayList<Float> extractFloat(String str) {
+        ArrayList<Float> f = new ArrayList<Float>();
+        Pattern pat = Pattern.compile("[-]?[0-9]*\\.?[0-9]+");
+        //matching the string with the pattern
+        Matcher m = pat.matcher(str);
+        //extracting and storing the float values
+        while(m.find()) {
+            f.add(Float.parseFloat(m.group()));
+        }
+        return f;
+    }
+
+    static public String customStringFormat(double value ) {
+        Locale locale = new Locale("en", "EN");
+        // Locale locale = new Locale("el", "GR");
+        String pattern = "###,###.##";
+        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat
+                .getNumberInstance(locale);
+
+        decimalFormat.applyPattern(pattern);
+        decimalFormat.setMaximumFractionDigits(2);
+        decimalFormat.setMinimumFractionDigits(2);
+        return decimalFormat.format(value);
+
+    }
+    public static void console(Context context, String tag, String msg){
+        if(context != null){
+            String date = new java.text.SimpleDateFormat("dd/MM/yy HH:mm:ss").format(new Date());
+        }
+        Log.d(tag,msg);
+    }
+    public static ObjectMapper initMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+
+        //mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+
+        mapper.setVisibility(mapper.getSerializationConfig().getDefaultVisibilityChecker()
+                .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
+                .withGetterVisibility(JsonAutoDetect.Visibility.NONE)
+                .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
+                .withCreatorVisibility(JsonAutoDetect.Visibility.NONE));
+        return mapper;
     }
 }
