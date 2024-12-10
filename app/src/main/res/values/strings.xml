@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">eGift</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="english">English</string>
+    <string name="greek">Greek</string>
+    <string name="network_not_connect">Network not connect.</string>
+    <string name="btn_ok">OK</string>
+    <string name="menu_setting">Settings</string>
+    <string name="cancel">Cancel</string>
+</resources>

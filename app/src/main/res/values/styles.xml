@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- start text -->
+    <style name="text_title">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="text_label">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="text_large">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="text_normal">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="text_small">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- end text -->
+    <!-- start button -->
+    <style name="button_normal">
+        <item name="android:height">50dp</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+    <style name="button_primary">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@drawable/keyboard_ok_button</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_weight">1</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+    <style name="button_secondary">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@drawable/keyboard_ok_button</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/button_secondary_height</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!-- end button -->
+    <style name="CustomDialogTheme">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+</resources>

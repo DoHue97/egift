@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">eGift</string>
+    <string name="sign_in">Καλώς ήρθατε</string>
+    <string name="email">Διεύθυνση Ηλ. Ταχυδρομείου</string>
+    <string name="password">Κωδικός Πρόσβασης</string>
+    <string name="login">Σύνδεση</string>
+    <string name="english">English</string>
+    <string name="greek">Eλληνικά</string>
+    <string name="network_not_connect">Το δίκτυο δεν συνδέεται.</string>
+    <string name="btn_ok">OK</string>
+    <string name="menu_setting">Settings</string>
+    <string name="cancel">Cancel</string>
+</resources>
