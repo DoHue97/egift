@@ -10,4 +10,13 @@
     <string name="btn_ok">OK</string>
     <string name="menu_setting">Settings</string>
     <string name="cancel">Cancel</string>
+
+    <string name="invalid_email">Τα στοιχεία εισόδου δεν είναι σωστά. Προσπαθήστε ξανά</string>
+    <string name="invalid_username_password">Τα στοιχεία εισόδου δεν σωστά. Προσπαθήστε ξανά</string>
+    <string name="cannot_connect_server">Αδυναμία σύνδεσης</string>
+    <string name="connect_timeout">Λήξη του χρονικού ορίου</string>
+    <string name="system_error">Παρουσιάστηκε σφάλμα. Προσπαθήστε ξανά</string>
+    <string name="invalid_login">Τα στοιχεία εισόδου δεν είναι σωστά. Προσπαθήστε ξανά</string>
+    <string name="login_success">Επιτυχής σύνδεση</string>
+    <string name="login_failed">Αδυναμία σύδεσης</string>
 </resources>
