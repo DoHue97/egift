@@ -10,4 +10,14 @@
     <string name="btn_ok">OK</string>
     <string name="menu_setting">Settings</string>
     <string name="cancel">Cancel</string>
+
+    <string name="invalid_email">Invalid email</string>
+    <string name="invalid_username_password">User Name and Password are invalid </string>
+    <string name="cannot_connect_server">Cannot connect to server</string>
+    <string name="connect_timeout">Connect to server timeout</string>
+    <string name="system_error">System got error. Please try again.</string>
+    <string name="invalid_login">Invalid Login</string>
+    <string name="login_success">Login successful</string>
+    <string name="login_failed">Login failed</string>
+
 </resources>
