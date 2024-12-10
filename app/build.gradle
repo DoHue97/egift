@@ -3,6 +3,16 @@ plugins {
 //    id 'com.android.application'
 }
 
+def getProps(String propName) {
+    def propsFile = rootProject.file('local.properties')
+    if (propsFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        return props[propName]
+    } else {
+        return "";
+    }
+}
 
 android {
     namespace 'com.crm.egift'
@@ -11,12 +21,13 @@ android {
 
     defaultConfig {
         applicationId "com.crm.egift"
-        minSdk 28
+        minSdk 27
         targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "api_key", getProps("apiKey"))
     }
 
     buildTypes {
@@ -53,4 +64,8 @@ dependencies {
 
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.2'
 }
