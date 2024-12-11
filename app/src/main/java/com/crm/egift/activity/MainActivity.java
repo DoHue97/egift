@@ -22,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.crm.egift.R;
 import com.crm.egift.storage.Storage;
+import com.crm.egift.utils.CustomDialog;
 import com.crm.egift.utils.LanguageUtil;
 import com.google.android.material.navigation.NavigationView;
 
@@ -52,23 +53,50 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
-            if (menuItem.getItemId() == R.id.nav_logout) {
-                onbtnLogout();
-            }
-            drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
-        });
-        navigationView.setNavigationItemSelectedListener(menuItem -> {
             if (menuItem.getItemId() == R.id.app_bar_switch) {
                 onChangeLanguage();
             }
             return true;
         });
 
+        Menu menu = navigationView.getMenu();
+        MenuItem userMenu = menu.findItem(R.id.nav_user);
+        userMenu.setTitle(Storage.getUserFullname(this));
+        MenuItem logoutMenu = menu.findItem(R.id.nav_logout);
+        MenuItem switchBusinessMenu = menu.findItem(R.id.nav_switch_business);
+        logoutMenu.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                new CustomDialog(MainActivity.this, new CustomDialog.OKListener() {
+                    @Override
+                    public void onOk() {
+                        onbtnLogout();
+                    }
+                    @Override
+                    public void onCancel() {
+
+                    }
+                }, getString(R.string.logout_msg), getString(R.string.menu_logout), getString(R.string.cancel),false).show();
+                return false;
+            }
+        });
+
+        switchBusinessMenu.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Intent intent = new Intent(MainActivity.this, SwitchBusinessActivity.class);
+                intent.putExtra("from_home", true);
+                startActivity(intent);
+                finish();
+                return false;
+            }
+        });
     }
 
     private void onbtnLogout() {
         Storage.setToken(MainActivity.this, "");
+        Storage.setOrganisations(MainActivity.this, "");
+        Storage.setBusiness(MainActivity.this, "");
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();

@@ -19,5 +19,5 @@
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorPrimary">#00245d</color>
     <color name="colorHeader">#00245d</color>
-
+    <color name="colorBorder">#00245d</color>
 </resources>

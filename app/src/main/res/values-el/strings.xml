@@ -24,6 +24,13 @@
     <string name="check_balance">Έλεγχος Υπόλοιπου</string>
     <string name="menu_logout">Αποσύνδεση</string>
     <string name="language">Ελληνικά</string>
-
+    <string name="select_business">Επιλέξτε επιχείρηση</string>
+    <string name="continue_title">Συνέχεια</string>
+    <string name="select_merchant">Διάλεξε Έμπορο</string>
+    <string name="select_business_warn">Παρακαλώ επιλέξτε επιχείρηση</string>
+    <string name="select_outlet">Επιλέξτε κατάστημα</string>
+    <string name="please_select_outlet">Παρακαλώ επιλέξτε κατάστημα</string>
+    <string name="switch_business">Επιλέξτε Επιχείρηση</string>
+    <string name="logout_msg">Είστε βέβαιοι ότι θέλετε να αποσυνδεθείτε;</string>
 
 </resources>

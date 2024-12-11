@@ -154,7 +154,7 @@ public class LoginActivity extends AppCompatActivity {
                         Storage.setPrimaryOrg(LoginActivity.this, primaryOrg);
                         Storage.setLoginmode(LoginActivity.this, loginMode);
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, SwitchBusinessActivity.class);
                         startActivity(intent);
                     }
                     else if(code.equals(ResultCodeEnum.INVALIDLOGINEXCEPTION.getLabel())){

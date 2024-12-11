@@ -22,9 +22,16 @@
     <string name="buy_egift">Buy egift</string>
     <string name="spend">Spend OTP</string>
     <string name="check_balance">Check Balance</string>
-    <string name="menu_header" translatable="false">Gift Card by egift</string>
+    <string name="menu_header" translatable="false">eGift</string>
     <string name="menu_logout">Logout</string>
     <string name="language">English</string>
-
+    <string name="select_business">Select business</string>
+    <string name="continue_title">Continue</string>
+    <string name="select_merchant">Select merchant</string>
+    <string name="select_business_warn">Please select a business</string>
+    <string name="select_outlet">Select outlet</string>
+    <string name="please_select_outlet">Please select an outlet</string>
+    <string name="switch_business">Switch business</string>
+    <string name="logout_msg">Are you sure you want to sign out?</string>
 
 </resources>
