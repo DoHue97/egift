@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.auth0.android.jwt.JWT;
@@ -15,6 +17,7 @@ import com.crm.egift.storage.Storage;
 import com.crm.egift.utils.AppUtils;
 import com.crm.egift.utils.CustomDialog;
 import com.crm.egift.utils.CustomProgressDialog;
+import com.crm.egift.utils.LanguageUtil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,7 +40,11 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.edLoginPassword)
     EditText edLoginPassword;
+    @BindView(R.id.rbLoginEnglish)
+    RadioButton rbLoginEnglish;
 
+    @BindView(R.id.rbLoginGreek)
+    RadioButton rbLoginGreek;
     private String username;
     private String password;
     CustomProgressDialog customProgressDialog;
@@ -46,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        LanguageUtil.initLanguage(this);
         ButterKnife.bind(this);
         customProgressDialog = new CustomProgressDialog();
         TextView btnLoginSubmit = findViewById(R.id.btnLoginSubmit);
@@ -53,6 +61,12 @@ public class LoginActivity extends AppCompatActivity {
         btnLoginSubmit.setOnClickListener(v -> {
             onLoginSubmit();
         });
+        String language = LanguageUtil.getCurrentLanguage(LoginActivity.this);
+        if (language == "el") {
+            rbLoginGreek.setChecked(true);
+        } else {
+            rbLoginEnglish.setChecked(true);
+        }
     }
 
     public void onLoginSubmit() {
@@ -163,5 +177,19 @@ public class LoginActivity extends AppCompatActivity {
         java.util.regex.Matcher m = p.matcher(email)
                 ;
         return m.matches();
+    }
+
+    @OnClick({R.id.rbLoginEnglish, R.id.rbLoginGreek})
+    public void onChangeLanguage(View view) {
+        if (view.getId() == R.id.rbLoginEnglish) {
+            Log.d(TAG, "onChangeLanguage: gaga" + view.getId());
+            LanguageUtil.setLanguage(LoginActivity.this, "en");
+
+        } else {
+            LanguageUtil.setLanguage(LoginActivity.this, "el");
+        }
+
+        LanguageUtil.initLanguage(LoginActivity.this);
+        LoginActivity.this.recreate();
     }
 }

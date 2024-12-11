@@ -19,4 +19,11 @@
     <string name="invalid_login">Τα στοιχεία εισόδου δεν είναι σωστά. Προσπαθήστε ξανά</string>
     <string name="login_success">Επιτυχής σύνδεση</string>
     <string name="login_failed">Αδυναμία σύδεσης</string>
+    <string name="buy_egift">Buy egift</string>
+    <string name="spend">Spend OTP</string>
+    <string name="check_balance">Έλεγχος Υπόλοιπου</string>
+    <string name="menu_logout">Αποσύνδεση</string>
+    <string name="language">Ελληνικά</string>
+
+
 </resources>

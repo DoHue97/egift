@@ -19,5 +19,12 @@
     <string name="invalid_login">Invalid Login</string>
     <string name="login_success">Login successful</string>
     <string name="login_failed">Login failed</string>
+    <string name="buy_egift">Buy egift</string>
+    <string name="spend">Spend OTP</string>
+    <string name="check_balance">Check Balance</string>
+    <string name="menu_header" translatable="false">Gift Card by egift</string>
+    <string name="menu_logout">Logout</string>
+    <string name="language">English</string>
+
 
 </resources>

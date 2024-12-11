@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:id="@+id/lnMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                style="@style/button_primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/cardview_corner_radius"
+                app:cardElevation="@dimen/cardview_elevation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fragment_checkbalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/button_primary"
+                    android:padding="10dp">
+
+                    <TextView
+                        style="@style/text_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/check_balance"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textAllCaps="true"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lnFragmentHomeContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/button_primary"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:visibility="visible"
+                        app:cardCornerRadius="@dimen/cardview_corner_radius"
+                        app:cardElevation="@dimen/cardview_elevation">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fragment_home_buy_egift"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/button_primary"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/imageView13"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:src="@drawable/ic_cash"
+                                app:tint="@color/colorPrimaryDark" />
+
+                            <TextView
+                                style="@style/text_small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView13"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:text="@string/buy_egift"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="true"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardview_corner_radius"
+                        app:cardElevation="@dimen/cardview_elevation">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fragment_home_spend"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/button_primary"
+                            android:paddingVertical="10dp">
+
+                            <ImageView
+                                android:id="@+id/imageView8"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:src="@drawable/ic_spend"
+                                app:tint="@color/colorPrimaryDark" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView8"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:text="@string/spend"
+                                style="@style/text_small"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="true"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

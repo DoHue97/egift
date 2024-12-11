@@ -131,7 +131,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:onClick="onLoginSubmit"/>
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -156,7 +157,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="16dp"
                     android:enabled="true"
-                    android:text="@string/english" />
+                    android:text="@string/english"
+                    android:onClick="onChangeLanguage"/>
 
                 <RadioButton
                     android:id="@+id/rbLoginGreek"
@@ -164,7 +166,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:enabled="true"
-                    android:text="@string/greek" />
+                    android:text="@string/greek"
+                    android:onClick="onChangeLanguage"/>
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>
