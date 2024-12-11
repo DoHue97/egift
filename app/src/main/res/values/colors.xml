@@ -20,4 +20,14 @@
     <color name="colorPrimary">#00245d</color>
     <color name="colorHeader">#00245d</color>
     <color name="colorBorder">#00245d</color>
+    <color name="Transparent">#00ffffff</color>
+    <color name="textHint">#6F8695</color>
+    <color name="textEdit">#00245d</color>
+    <color name="textActive">#00245d</color>
+    <color name="textPrimary">#00245d</color>
+    <color name="textLabel">#00245d</color>
+    <color name="buttonDisable">#6F8695</color>
+    <color name="colorStrokePrimary">#00245d</color>
+    <color name="buttonEnable">#00245d</color>
+
 </resources>

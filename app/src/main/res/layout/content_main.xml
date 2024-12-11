@@ -46,7 +46,7 @@
                         app:cardElevation="@dimen/cardview_elevation">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/fragment_home_buy_egift"
+                            android:id="@+id/home_buy_egift"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/button_primary"
@@ -85,7 +85,7 @@
                         app:cardElevation="@dimen/cardview_elevation">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/fragment_home_spend"
+                            android:id="@+id/home_spend"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/button_primary"

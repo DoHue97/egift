@@ -33,5 +33,33 @@
     <string name="please_select_outlet">Please select an outlet</string>
     <string name="switch_business">Switch business</string>
     <string name="logout_msg">Are you sure you want to sign out?</string>
-
+    <string name="gift_card_amount">Gift Card Amount</string>
+    <string name="sender_name">Sender Name</string>
+    <string name="beneficiary_name">Beneficiary Name</string>
+    <string name="beneficiary_email">Beneficiary Email</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="gift_message">Gift Message</string>
+    <string name="enter_message">Enter Message</string>
+    <string name="purchase_a_gift_pass">Purchase a Gift Pass</string>
+    <string name="euro_symbol">€</string>
+    <string name="gc_value_must">Gift Card value must be between %1€ - %2€. Please provide a new value</string>
+    <string name="many_requests">Too many Request in the same business. Please try again later</string>
+    <string name="spend_failed">Transaction failed</string>
+    <string name="cannot_get_passplans">Cannot get Pass plan</string>
+    <string name="cancel_payment_success">Cancel payment successful</string>
+    <string name="user_cancel_exit_button">User Cancel - exit button</string>
+    <string name="user_cancel_on_back_press">User Cancel - on back pressed</string>
+    <string name="transaction_timeout">Transaction Timeout</string>
+    <string name="transaction_decline">Transaction declined</string>
+    <string name="cannot_cancel_payment">Cannot cancel payment</string>
+    <string name="user_cancel">User Cancel</string>
+    <string name="agree_term">By filling in the information and completing the submission, you agree to the transaction terms found at www.cardlink.gr</string>
+    <string name="do_you_wish_to_continue">Do you wish to continue?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="purchase_amount">Purchase Amount</string>
+    <string name="select_payment_method">Select Your Payment Method</string>
+    <string name="cash">Cash</string>
+    <string name="card">Bank Card</string>
 </resources>

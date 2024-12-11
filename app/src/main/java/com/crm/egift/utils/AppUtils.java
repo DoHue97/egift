@@ -1,10 +1,15 @@
 package com.crm.egift.utils;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.crm.egift.R;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,9 +18,11 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -111,5 +118,38 @@ public class AppUtils {
                 .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
                 .withCreatorVisibility(JsonAutoDetect.Visibility.NONE));
         return mapper;
+    }
+    public static String getRamdomBaseOnDatetime() {
+        String transref = "";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        transref += sdf.format(System.currentTimeMillis());
+        transref += String.format("%08d", getRamdom());
+        return transref;
+    }
+    public static int getRamdom() {
+        try {
+            Random rand = new Random();
+            int num = rand.nextInt(10000000);
+            return num;
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    public static void paymentDialog(Activity activity, String amount, View.OnClickListener listener){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(activity,R.style.CustomAlertDialog);
+        ViewGroup viewGroup = activity.findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(activity).inflate(R.layout.custom_alert_dialog, viewGroup, false);
+//                Button buttonOk=dialogView.findViewById(R.id.buttonOk);
+        TextView tvAmount = dialogView.findViewById(R.id.tvAmount);
+        TextView btnCash = dialogView.findViewById(R.id.tvCash);
+        tvAmount.setText("€"+amount);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+        btnCash.setOnClickListener(view -> {
+            alertDialog.dismiss();
+            listener.onClick(view);
+        });
+        alertDialog.show();
     }
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_alert_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="30dp"
+    android:paddingBottom="40dp"
+    >
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_18_bold_red"
+        android:text="@string/purchase_amount"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_20_bold_red"
+        android:textSize="26dp"
+        android:text="$0"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_18_bold_red"
+        android:text="@string/select_payment_method"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+    <ImageView
+        android:id="@+id/icCash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cash2"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardCash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toBottomOf="@id/icCash"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvCash"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            style="@style/button_primary"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="@string/cash" />
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

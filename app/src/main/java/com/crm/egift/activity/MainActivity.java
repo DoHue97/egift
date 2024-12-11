@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -91,6 +92,17 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        ConstraintLayout homeBuyEgift = findViewById(R.id.home_buy_egift);
+
+        homeBuyEgift.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BuyEGiftActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void onbtnLogout() {

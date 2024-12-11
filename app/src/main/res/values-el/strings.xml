@@ -32,5 +32,34 @@
     <string name="please_select_outlet">Παρακαλώ επιλέξτε κατάστημα</string>
     <string name="switch_business">Επιλέξτε Επιχείρηση</string>
     <string name="logout_msg">Είστε βέβαιοι ότι θέλετε να αποσυνδεθείτε;</string>
+    <string name="gift_card_amount">Ποσό Δωροκάρτας</string>
+    <string name="sender_name">Όνομα Αποστολέα</string>
+    <string name="beneficiary_name">Όνομα Παραλήπτη</string>
+    <string name="beneficiary_email">Email Παραλήπτη</string>
+    <string name="enter_name">Συμπληρώστε Όνομα</string>
+    <string name="enter_email">Συμπληρώστε Email</string>
+    <string name="gift_message">Μήνυμα σε παραλήπτη</string>
+    <string name="enter_message">Εισάγετε το μήνυμα.</string>
+    <string name="purchase_a_gift_pass">Αγορά Δωροκάρτας</string>
+    <string name="euro_symbol">€</string>
+    <string name="gc_value_must">H αξία της δωροκάρτας πρέπει να είναι μεταξύ %1€ και %2€. Παρακαλώ πληκτρολογήστε μια νέα αξία</string>
+    <string name="many_requests">Έχετε πραγματοποιήσει αρκετές συναλλαγές σε λιγότερο από μια ώρα στην ίδια επιχείρηση. Παρακαλώ προσπαθήστε αργότερα</string>
+    <string name="spend_failed">Η συναλλαγή απορρίφθηκε</string>
+    <string name="cannot_get_passplans">Αδυναμία λήψης Pass Plan</string>
+    <string name="cancel_payment_success">Επιτυχής ακύρωση συναλλαγής</string>
+    <string name="user_cancel_exit_button">Έξοδος συναλλαγής από τον χρήστη</string>
+    <string name="user_cancel_on_back_press">Έξοδος συναλλαγής από τον χρήστη</string>
+    <string name="transaction_timeout">Λήξη χρονικού ορίου συναλλαγής</string>
+    <string name="transaction_decline">Η συναλλαγή απορρίφθηκε</string>
+    <string name="cannot_cancel_payment">Αδυναμία ακύρωσης συναλλαγής</string>
+    <string name="user_cancel">Έξοδος συναλλαγής από τον χρήστη</string>
+    <string name="agree_term">Συμπληρώνοντας τις πληροφορίες και ολοκληρώνοντας την καταχώρηση, συμφωνείτε με τους όρους χρήσης του προγράμματος που θα βρείτε στην ιστοσελίδα μας.</string>
+    <string name="do_you_wish_to_continue">Επιθυμείτε να συνεχίσετε?</string>
+    <string name="yes">ΝΑΙ</string>
+    <string name="no">ΟΧΙ</string>
+    <string name="purchase_amount">Ποσό Αγοράς</string>
+    <string name="select_payment_method">Επιλέξτε τρόπο πληρωμής</string>
+    <string name="cash">Μετρητά</string>
+    <string name="card">Κάρτα</string>
 
 </resources>
