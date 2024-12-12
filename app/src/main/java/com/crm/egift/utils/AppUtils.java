@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.crm.egift.R;
@@ -27,8 +28,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AppUtils {
-    public static final String TAG = "EGIFT_APPUTILS";
-
+    public static final String TAG = "CARDLINK_APPUTILS";
+    public static final String TYPE_WALLET_TOPUP = "wallettopup";
+    public static final String TYPE_BUY_PHYSICGIFT = "buyphysicgift";
+    public static final String TYPE_BUY_EGIFT = "buyegift";
+    public static final String TYPE_PURCHASE_GIFTCARD = "purchasegiftcard";
+    public static final String TYPE_PURCHASE_PHONEEMAILOTP = "purchasephone";
+    public static final String TYPE_PURCHASE_OTP = "purchaseotp";
     public static boolean isNetworkConnected(Context context) {
 
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -151,5 +157,10 @@ public class AppUtils {
             listener.onClick(view);
         });
         alertDialog.show();
+    }
+
+    public static void hideSoftKeyboard(Activity activity, View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

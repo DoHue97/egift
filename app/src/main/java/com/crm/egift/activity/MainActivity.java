@@ -1,15 +1,12 @@
 package com.crm.egift.activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Switch;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
@@ -21,6 +18,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bumptech.glide.Glide;
 import com.crm.egift.R;
 import com.crm.egift.storage.Storage;
 import com.crm.egift.utils.CustomDialog;
@@ -28,7 +26,6 @@ import com.crm.egift.utils.LanguageUtil;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(v -> {
             drawerLayout.openDrawer(GravityCompat.START);
         });
+        TextView businessNameTextView = findViewById(R.id.toolbar_business_name);
+        String nameBusiness = Storage.getBusinessName(MainActivity.this);
+        businessNameTextView.setText(nameBusiness);
+        String logoPath = Storage.getBusinessLogo(MainActivity.this);
+        ImageView businessLogoImageView = findViewById(R.id.toolbar_business_logo);
+        if (logoPath != null) {
+            Glide.with(this).load(logoPath).into(businessLogoImageView);
+        } else {
+            businessLogoImageView.setImageResource(R.mipmap.footer_logo);
+        }
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             if (menuItem.getItemId() == R.id.app_bar_switch) {
@@ -59,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+        TextView outletNameTextView = findViewById(R.id.toolbar_outlet_name);
+        String nameOutlet = Storage.getOutletName(MainActivity.this);
+        outletNameTextView.setText(nameOutlet);
 
         Menu menu = navigationView.getMenu();
         MenuItem userMenu = menu.findItem(R.id.nav_user);
@@ -103,6 +113,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ConstraintLayout homeSpendOtp = findViewById(R.id.home_spend);
+        homeSpendOtp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SelectPurchaseMethodActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void onbtnLogout() {

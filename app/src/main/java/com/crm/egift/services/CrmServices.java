@@ -6,6 +6,7 @@ import android.util.Log;
 
 
 import com.auth0.android.jwt.JWT;
+import com.crm.egift.model.Offer;
 import com.crm.egift.model.PurchaseResponse;
 import com.crm.egift.storage.Storage;
 import com.crm.egift.utils.AppUtils;
@@ -368,6 +369,119 @@ public class CrmServices {
         }
         return result;
     }
+    public JSONObject cancelPurchase(String purchaseId) throws Exception {
+        Log.d(TAG, "cancelPurchase: purchaseId =" + purchaseId);
+        JSONObject result = new JSONObject();
+        try {
+            String url = Constants.CrmConfig.SERVICE_URL_GET_PURCHASE.replace("{id}", purchaseId) + "/actions";
+            JSONObject body = new JSONObject();
+            body.put("action", "CANCEL");
+            result = ServiceUtils.sendPutRequestWithToken(url, body, context);
+            Log.d(TAG, "cancelPurchase result: " + result);
+            if(result != null) {
+                if(result.has("responseCode") && result.getInt("responseCode") == 200){
+                    result.put("code", ResultCodeEnum.OK);
+                }
+                else{
+                    result.put("code", ResultCodeEnum.UNKNOWN_ERROR);
+                }
+            }
+            else{
+                result = new JSONObject();
+                result.put("code", ResultCodeEnum.UNKNOWN_ERROR);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d(TAG, "cancelPurchase: purchaseId =" + purchaseId + ", Exception: " + e.getMessage());
+            if(e.getMessage().equals(ResultCodeEnum.NOT_CONNECT_API.toString())){
+                throw new Exception(ResultCodeEnum.NOT_CONNECT_API.toString());
+            }
+            else if(e.getMessage().equals(ResultCodeEnum.REQUEST_TIMEOUT.toString())){
+                throw new Exception(ResultCodeEnum.REQUEST_TIMEOUT.toString());
+            }
+            else {
+                throw new Exception(ResultCodeEnum.UNKNOWN_ERROR.toString());
+            }
+        }
+        return result;
+    }
+    public JSONObject getActiveRewardOffers() throws Exception {
+        Log.d(TAG, "getRewardOffers: " );
+        JSONObject result = new JSONObject();
+        try {
+            String url = Constants.CrmConfig.SERVICE_URL_GET_ACTIVE_REWARD_OFFERS;
+            result = ServiceUtils.sendGetRequestWithToken(url , context);
+            Log.d(TAG, "getRewardOffers result: " + result);
+            if(result != null) {
+                if(result.has("responseCode") && result.getInt("responseCode") == 200){
+                    result.put("code", ResultCodeEnum.OK);}
+                else{
+                    result.put("code", ResultCodeEnum.UNKNOWN_ERROR);
+                }
+            }
+            else{
+                result = new JSONObject();
+                result.put("code", ResultCodeEnum.UNKNOWN_ERROR);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d(TAG, "getRewardOffers, Exception: " + e.getMessage());
+            if(e.getMessage().equals(ResultCodeEnum.NOT_CONNECT_API.toString())){
+                throw new Exception(ResultCodeEnum.NOT_CONNECT_API.toString());
+            }
+            else if(e.getMessage().equals(ResultCodeEnum.REQUEST_TIMEOUT.toString())){
+                throw new Exception(ResultCodeEnum.REQUEST_TIMEOUT.toString());
+            }
+            else {
+                throw new Exception(ResultCodeEnum.UNKNOWN_ERROR.toString());
+            }
+        }
+        return result;
+    }
+    public List<Offer.Award> getRewardOffersDetail(String id) throws Exception {
+        Log.d(TAG, "getRewardOffersDetail id: " +id );
+        List<Offer.Award> awardList = new ArrayList<>();
+        try {
+            String url = Constants.CrmConfig.SERVICE_URL_GET_OFFER_DETAIL.replace("{id}", id);
+            JSONObject result = ServiceUtils.sendGetRequestWithToken(url , context);
+            Log.d(TAG, "getRewardOffersDetail result: " + result);
+            if(result != null) {
+                if(result.has("responseCode") && result.getInt("responseCode") == 200){
+                    JSONArray awards = result.getJSONArray("awards");
+                    AppUtils.console(context.getApplicationContext(), TAG, "getRewardOffersDetail awards: " + awards);
+
+                    if(awards != null){
+                        for (int i=0; i< awards.length() ; i++){
+                            ObjectMapper mapper = AppUtils.initMapper();
+                            JSONObject org = (JSONObject) awards.get(i);
+                            Offer.Award convertOfr = mapper.readValue(org.toString(), Offer.Award.class);
+                            AppUtils.console(context, TAG, "GetRewardOffersTask award item = "+convertOfr.toString());
+                            awardList.add(convertOfr);
+                        }
+                    }
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d(TAG, "getRewardOffers, Exception: " + e.getMessage());
+            if(e.getMessage().equals(ResultCodeEnum.NOT_CONNECT_API.toString())){
+                throw new Exception(ResultCodeEnum.NOT_CONNECT_API.toString());
+            }
+            else if(e.getMessage().equals(ResultCodeEnum.REQUEST_TIMEOUT.toString())){
+                throw new Exception(ResultCodeEnum.REQUEST_TIMEOUT.toString());
+            }
+            else {
+                throw new Exception(ResultCodeEnum.UNKNOWN_ERROR.toString());
+            }
+        }
+        return awardList;
+    }
+
 
     public JSONObject getWallet(String walletId) throws Exception {
         Log.d(TAG, "getWallet: walletId=" + walletId );

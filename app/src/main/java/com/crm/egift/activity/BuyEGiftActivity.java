@@ -173,7 +173,13 @@ public class BuyEGiftActivity extends AppCompatActivity implements TextWatcher{
         if(view2.getVisibility()==View.VISIBLE) view2.setVisibility(View.GONE);
         else super.finish();
     }
-
+    @OnClick(R.id.ivHeaderExit)
+    public void onExit(View view){
+        finishAffinity();
+        overridePendingTransition(0, 0);
+        startActivity(new Intent(this, MainActivity.class));
+        overridePendingTransition(0, 0);
+    }
 
 //    @OnClick({R.id.ivHeaderExit})
 //    public void onExit(View view){
@@ -237,11 +243,9 @@ public class BuyEGiftActivity extends AppCompatActivity implements TextWatcher{
                     String code = result.getString("code");
                     if(code.equals(ResultCodeEnum.OK.getLabel())){
                         success = true;
-                        Intent intent = new Intent(BuyEGiftActivity.this, MainActivity.class);
-                        Toast.makeText(BuyEGiftActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(BuyEGiftActivity.this, TransactionSuccessActivity.class);
+                        intent.putExtra("header title", tvHeaderTitle.getText().toString());
                         startActivity(intent);
-                        finish();
-
                     }
                     else if(code.equals(ResultCodeEnum.BAD_REQUEST.getLabel())){
                         msg = result.getString("message");
@@ -276,7 +280,6 @@ public class BuyEGiftActivity extends AppCompatActivity implements TextWatcher{
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            customProgressDialog.show(BuyEGiftActivity.this);
         }
 
         @Override
@@ -306,7 +309,6 @@ public class BuyEGiftActivity extends AppCompatActivity implements TextWatcher{
                     //AppUtils.msg(BuyEGiftActivity.this, getString(R.string.system_error), null);
                 }
                 exception = true;
-                customProgressDialog.dismiss();
             }
             return null;
         }

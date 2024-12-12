@@ -53,7 +53,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline80"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/colorHeader" />
+        app:tint="@color/colorHeader"
+        android:onClick="onExit"/>
 
     <View
         android:id="@+id/header_view_1"

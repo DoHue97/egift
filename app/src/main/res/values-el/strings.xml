@@ -61,5 +61,21 @@
     <string name="select_payment_method">Επιλέξτε τρόπο πληρωμής</string>
     <string name="cash">Μετρητά</string>
     <string name="card">Κάρτα</string>
+    <string name="enter_otp">Συμπληρώστε το OTP</string>
+    <string name="enter_purchase_amount">Εισάγετε το ποσό αγοράς</string>
+    <string name="active_offers">Ενεργές προσφορές</string>
+    <string name="spend_from_ewallet">Εξαργύρωση υπολοίπου</string>
+    <string name="amount_due">Υπολειπόμενο ποσό:</string>
+    <string name="process_purchase">Ολοκλήρωση συναλλαγής</string>
+    <string name="input_must_6_digis">Το μήκος του αριθμού τηλεφώνου πρέπει να είναι 6 ψηφία.</string>
+    <string name="request_amount_not_more_purchase">Το ποσό εξαργύρωσης υπερβαίνει το ποσό αγοράς</string>
+    <string name="request_amount_not_empty">Το ποσό εξαργύρωσης δεν μπορεί να είναι μηδενικό</string>
+    <string name="record_not_found">Η εγγραφή δεν βρέθηκε.</string>
+    <string name="not_enough_funds">Το υπόλοιπο δεν είναι επαρκές για την ολοκλήρωση της συναλλαγής.</string>
+    <string name="phone_email_qrcode">Τηλέφωνο/Email/QR</string>
+    <string name="customer_otp_spend">Κωδικός OTP Πελάτη</string>
+    <string name="select_method">Επιλέξτε τη μέθοδο αγοράς.</string>
+    <string name="spend_sucessful">Η συναλλαγή έχει ολοκληρωθεί επιτυχώς. Προχωρήστε με πληρωμή του υπόλοιπου ποσού μέσω του ταμειακού.</string>
+    <string name="transaction_sucessful">Επιτυχής συναλλαγή</string>
 
 </resources>

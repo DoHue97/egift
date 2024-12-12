@@ -29,5 +29,6 @@
     <color name="buttonDisable">#6F8695</color>
     <color name="colorStrokePrimary">#00245d</color>
     <color name="buttonEnable">#00245d</color>
+    <color name="colorBackground">#f1f1f1</color>
 
 </resources>

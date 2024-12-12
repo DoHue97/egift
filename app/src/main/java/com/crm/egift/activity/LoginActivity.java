@@ -15,7 +15,6 @@ import com.crm.egift.services.CrmServices;
 import com.crm.egift.services.ResultCodeEnum;
 import com.crm.egift.storage.Storage;
 import com.crm.egift.utils.AppUtils;
-import com.crm.egift.utils.CustomDialog;
 import com.crm.egift.utils.CustomProgressDialog;
 import com.crm.egift.utils.LanguageUtil;
 

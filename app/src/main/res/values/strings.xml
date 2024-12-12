@@ -62,4 +62,21 @@
     <string name="select_payment_method">Select Your Payment Method</string>
     <string name="cash">Cash</string>
     <string name="card">Bank Card</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="enter_purchase_amount">Enter Purchase amount</string>
+    <string name="active_offers">Active Offers</string>
+    <string name="spend_from_ewallet">Redemption amount:</string>
+    <string name="amount_due">Amount Due:</string>
+    <string name="process_purchase">Purchase</string>
+    <string name="input_must_6_digis">Please enter at least 6 digits</string>
+    <string name="request_amount_not_more_purchase">Redemption amount should not be more than the purchase amount</string>
+    <string name="request_amount_not_empty">The redemption amount cannot be zero</string>
+    <string name="record_not_found">Record not found</string>
+    <string name="not_enough_funds">There is not enough balance to complete the transaction.</string>
+    <string name="phone_email_qrcode">Phone/Email/QR code</string>
+    <string name="customer_otp_spend">Customer OTP Spend</string>
+    <string name="select_method">Please select the method you want to use to purchase</string>
+    <string name="spend_sucessful">The transaction was completed successfully. Proceed with payment of remaining amount via cash register.</string>
+    <string name="transaction_sucessful">Transaction successful</string>
+
 </resources>
